@@ -16,7 +16,7 @@ The study spans **five semesters (2023–2025)** and involves **98 student pairs
 
 ---
 
-## Repository Structure
+<---!## Repository Structure
 
 ```
 .
@@ -63,7 +63,7 @@ The study spans **five semesters (2023–2025)** and involves **98 student pairs
 | Item | Description |
 |---|---|
 | **Course** | Software Verification and Validation (undergraduate) |
-| **Participants** | 98 pairs (196 students) across 5 semesters |
+| **Participants** | 98 pairs  across 5 semesters |
 | **Frameworks** | Cypress and Selenium (WebDriver) |
 | **System Under Test** | [Sylius](https://sylius.com/) — open-source eCommerce platform |
 | **Data Collection** | Test suite submissions + perception questionnaire |
@@ -164,7 +164,7 @@ Output files will match the columns in `data/code-analysis-results.csv`. Each sc
 
 ## Ethical Considerations
 
-All student data was collected as part of regular course activities. Participation was part of the course requirements, and data was anonymized prior to analysis and publication. No personally identifiable information is included in this repository.
+All student data was collected as part of regular course activities. Participation was part of the course requirements, and data was anonymized prior to analysis and publication. No personally identifiable information is included in this repository. ---!>
 
 ---
 
