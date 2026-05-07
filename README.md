@@ -58,119 +58,79 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 │   │   ├── S4.cvs
 │   │   └── S5.cvs
 ```
-
 ---
-
-## Study Design Summary
+## Study Design
 
 | Item | Description |
-|---|---|
-| **Course** | Software Verification and Validation (undergraduate) |
-| **Participants** | 98 pairs  across 5 semesters |
-| **Frameworks** | Cypress and Selenium (WebDriver) |
-| **System Under Test** | [Sylius](https://sylius.com/) — open-source eCommerce platform |
-| **Data Collection** | Test suite submissions + perception questionnaire |
-| **Analysis** | Static analysis pipeline (AST + ESLint) + content analysis of open-ended responses |
+|------|-------------|
+| Course | Software Verification and Validation (undergraduate, CS program) |
+| Participants | 98 pairs across 5 semesters (2023–2025) |
+| Frameworks | Cypress and Selenium WebDriver |
+| System Under Test | [Sylius](https://sylius.com/) — open-source eCommerce platform |
+| Data collection | Test suite submissions + perception questionnaire |
+| Analysis | AST-based static analysis + ESLint + content analysis of open-ended responses |
 
-Each pair was required to develop two test suites — one in Cypress and one in Selenium — targeting a specific feature of Sylius. Minimum requirements included at least 10 test cases per suite, 4 GUI interactions per test case, and at least 1 assertion per test case.
-
-For full details on the study protocol, metrics definition, and data collection procedure, see [`study-design/study-design.md`](study-design/study-design.md).
+Each pair developed two test suites — one in Cypress, one in Selenium — targeting a specific Sylius feature. Minimum requirements: ≥ 10 test cases per suite, ≥ 4 GUI interactions per test case, ≥ 1 assertion per test case.
 
 ---
 
-## Artifacts
+## Analysis Pipeline
 
-### Materials (`materials/`)
+Two complementary tools were used to extract metrics from the test suites:
 
-- **`activity.pdf`** — The assignment specification given to student pairs, including the testing objectives, minimum requirements, and submission instructions.
-- **`questionnaire.pdf`** — The structured questionnaire administered at the end of the activity. It includes closed questions on framework preference, capture-replay usage, and synchronization challenges, as well as an open-ended question on perceived differences and difficulties.
+**1. AST-based analysis** (`scripts/ast-analysis/`)  
+Parses each test file into an Abstract Syntax Tree to extract: `test_case_count`, `assertion_conformity`, `interaction_conformity`, `avg_assertions`, `total_locators`, `fragile_locator_rate`, locator type breakdown (`loc_class`, `css_outro`, `xpath_relativo`), and the `smell_hard_coded` metric.
 
-### Analysis Scripts (`scripts/`)
+**2. ESLint** (`scripts/eslint-config/`)  
+Detects the following test smells: `eslint_cy_wait_fixo`, `eslint_unsafe_chain`, `eslint_await_loop`, `eslint_no_only_test`, `eslint_no_unused_var`, `max_lines_per_function`, `max_statements`.
 
-Two complementary tools were used to analyze the test suites:
-
-1. **AST-based analysis** (`scripts/ast-analysis/`): A custom JavaScript script that parses each test file into an Abstract Syntax Tree to extract conformance metrics (test case count, assertion conformity, interaction conformity), locator types and fragility rates, and the `hard_coded` test smell. AST parsing was preferred over text matching to avoid false positives from method names or comments.
-
-2. **ESLint configuration** (`scripts/eslint-config/`): An ESLint setup using the `eslint-plugin-cypress` and `eslint-plugin-mocha` plugins to detect the following test smells: `fixed_wait`, `await_loop`, `unsafe_chain`, `no_only_test`, `no_unused_var`, `max_lines_per_function`, and `max_statements`.
-
-Each `README.md` inside the script folders documents dependencies and usage instructions.
-
-### Test Suites (`test-suites/`)
-
-Anonymized test suite submissions organized by framework and semester. All identifying information (student names, university references, email addresses) has been removed. Each `.zip` file contains the suite files submitted by each pair in that semester, named `pair-N/` (e.g., `pair-1/`, `pair-2/`).
-
-### Data (`data/`)
-
-- **`code-analysis-results.csv`** — Output of the static analysis pipeline. Each row corresponds to one test suite (one pair × one framework). Columns include all metrics described in the paper: `semester`, `pair_id`, `framework`, `test_case_count`, `assert_conformity`, `interact_conformity`, `avg_assertions`, `fragile_locator_rate`, and all test smell counts.
-- **`questionnaire-responses.csv`** — Anonymized questionnaire responses. Each row corresponds to one pair. Columns include: `semester`, `pair_id`, `preferred_framework`, `used_capture_replay_cypress`, `corrected_cypress`, `used_capture_replay_selenium`, `corrected_selenium`, `sync_issues_cypress`, `sync_issues_selenium`, and `open_response`.
+See each script's `README.md` for setup and usage instructions.
 
 ---
 
-## Metrics Reference
+## Data Files
 
-### Group 1 — Conformance
+### `data/code-analysis-results.csv`
 
-| Metric | Description |
-|---|---|
-| `test_case_count` | Number of test cases implemented (minimum required: 10) |
-| `assert_conformity` | Proportion of test cases containing at least one assertion |
-| `interact_conformity` | Proportion of test cases containing at least four GUI interactions |
+One row per pair per framework. Columns:
 
-### Group 2 — Complexity and Locator Fragility
+| Column | Description |
+|--------|-------------|
+| `semester` | S1–S5 |
+| `pair_id` | Anonymized pair identifier |
+| `framework` | `cypress` or `selenium` |
+| `test_case_count` | Number of test cases (starter kit excluded) |
+| `assertion_conformity` | % of test cases with ≥ 1 assertion |
+| `interaction_conformity` | % of test cases with ≥ 4 interactions |
+| `avg_assertions` | Average assertions per test case |
+| `total_locators` | Total locators found in the suite |
+| `fragile_locator_rate` | Line-weighted proportion of fragile locators |
+| `loc_class` | Count of class-based locators |
+| `css_outro` | Count of unclassified CSS locators |
+| `xpath_relativo` | Count of relative XPath locators |
+| `smell_hard_coded` | Hard-coded values smell count |
+| `eslint_cy_wait_fixo` | Fixed-wait smell (ESLint) |
+| `eslint_unsafe_chain` | Unsafe chain smell (ESLint) |
+| `eslint_await_loop` | Await-loop smell (ESLint) |
+| `eslint_no_only_test` | `.only()` smell (ESLint) |
+| `eslint_no_unused_var` | Unused variable smell (ESLint) |
+| `max_lines_per_function` | Max lines per function smell (ESLint) |
+| `max_statements` | Max statements smell (ESLint) |
 
-| Metric | Description |
-|---|---|
-| `avg_assertions` | Average number of assertions per test case |
-| `fragile_locator_rate` | Line-weighted proportion of fragile locators (XPath, structural CSS, class-based, etc.) |
+### `data/questionnaire-responses.csv`
 
-### Group 3 — Test Smells (10% trimmed mean)
-
-| Metric | Description |
-|---|---|
-| `hard_coded` | Hard-coded literal values in test actions or assertions |
-| `fixed_wait` | Fixed-time waits (e.g., `cy.wait(n)`, `sleep(n)`) |
-| `await_loop` | Polling loops used as synchronization strategy |
-| `unsafe_chain` | Unsafe chaining of asynchronous Cypress commands |
-| `no_only_test` | Use of `.only()` left unintentionally in the suite |
-| `no_unused_var` | Declared variables never referenced |
-| `max_lines_per_function` | Test functions exceeding a line count threshold |
-| `max_statements` | Excessive number of statements in a single function |
-
----
-
-## Reproducing the Analysis
-
-### Requirements
-
-- Node.js ≥ 18
-- npm ≥ 9
-
-### Steps
-
-```bash
-# 1. Install dependencies
-cd scripts/ast-analysis
-npm install
-
-# 2. Run the AST analysis on a test suite folder
-node analyze.js --input ../../test-suites/cypress/S1-cypress/ --framework cypress
-
-# 3. Run ESLint smell detection
-cd ../eslint-config
-npm install
-npx eslint ../../test-suites/cypress/S1-cypress/ --format json > smells-S1-cypress.json
-```
-
-Output files will match the columns in `data/code-analysis-results.csv`. Each script's `README.md` provides detailed usage instructions and configuration options.
+One row per pair. Columns: `semester`, `pair_id`, `preferred_framework`, `used_capture_replay_cypress`, `corrected_cypress`, `used_capture_replay_selenium`, `corrected_selenium`, `sync_issues_cypress`, `sync_issues_selenium`, `open_response`.
 
 ---
 
 ## Ethical Considerations
 
-All student data was collected as part of regular course activities. Participation was part of the course requirements, and data was anonymized prior to analysis and publication. No personally identifiable information is included in this repository. ---!>
+Data was collected as part of regular course activities and anonymized prior to analysis. No personally identifiable information is included in this repository.
 
 ---
 
 ## License
 
-The artifacts in this repository are made available for research and replication purposes under the [MIT License](LICENSE).
+MIT License
+---
+
