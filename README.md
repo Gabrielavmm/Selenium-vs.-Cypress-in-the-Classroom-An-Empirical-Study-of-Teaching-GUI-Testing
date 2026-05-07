@@ -15,8 +15,7 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 - **RQ2:** How do students perceive the development experience and challenges of using Cypress and Selenium?
 
 ---
-
-<---!## Repository Structure
+Repository Structure
 
 ```
 .
