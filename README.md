@@ -22,8 +22,6 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 .
 ├── README.md
 │
-├── study-design/
-│   └── study-design.md          # Study goals, context, protocol, and metrics description
 │
 ├── materials/
 │   ├── activity.pdf             # Assignment given to student pairs
@@ -31,29 +29,34 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 │
 ├── scripts/
 │   ├── ast-analysis/            # Custom AST-based parser for conformance, fragility, and hard-coded smells
-│   │   ├── analyze.js
+│   │   ├── ast.py
 │   │   └── README.md
 │   └── eslint-config/           # ESLint configuration with Cypress and Mocha plugins for test smell detection
-│       ├── .eslintrc.json
+│       ├── eslint.config.js
 │       └── README.md
 │
-├── test-suites/
-│   ├── cypress/                 # Anonymized Cypress test suites per semester
-│   │   ├── S1-cypress.zip
-│   │   ├── S2-cypress.zip
-│   │   ├── S3-cypress.zip
-│   │   ├── S4-cypress.zip
-│   │   └── S5-cypress.zip
-│   └── selenium/                # Anonymized Selenium test suites per semester
-│       ├── S1-selenium.zip
-│       ├── S2-selenium.zip
-│       ├── S3-selenium.zip
-│       ├── S4-selenium.zip
-│       └── S5-selenium.zip
+├── test-suites/                    # Anonymized test suites per semester
+│   │   ├── S1.zip
+│   │   ├── S2.zip
+│   │   ├── S3.zip
+│   │   ├── S4.zip
+│   │   └── S5.zip
+
 │
 └── data/
     ├── code-analysis-results.csv     # Static analysis output (conformance, fragility, test smells)
+│   │   ├── S1.cvs
+│   │   ├── S2.cvs
+│   │   ├── S3.cvs
+│   │   ├── S4.cvs
+│   │   └── S5.cvs
+
     └── questionnaire-responses.csv   # Anonymized questionnaire responses per pair and semester
+│   │   ├── S1.cvs
+│   │   ├── S2.cvs
+│   │   ├── S3.cvs
+│   │   ├── S4.cvs
+│   │   └── S5.cvs
 ```
 
 ---
