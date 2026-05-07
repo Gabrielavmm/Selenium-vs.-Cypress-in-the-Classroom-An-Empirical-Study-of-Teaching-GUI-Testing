@@ -1,0 +1,49 @@
+ID da Dupla,Seção testada,"Na opinião de vocês, foi mais fácil implementar os casos de teste em qual framework?","Vocês utilizaram uma ferramenta de captura-replay, como o Cypress Scenario Recorder, para gerar os casos de teste em Cypress?","Caso vocês tenham utilizado uma ferramenta de captura-replay para o Cypress, foi necessário realizar correções nos casos de teste gerados? Desconsiderando a inclusão de asserções. ","Vocês utilizaram uma ferramenta de captura-replay, como o Selenium IDE, para gerar os casos de teste em Selenium?","Caso vocês tenham utilizado uma ferramenta de captura-replay para o Selenium, foi necessário realizar correções nos casos de teste gerados? Desconsiderando a inclusão de asserções. 
+","Durante o desenvolvimento do casos de testes com Cypress vocês foram impactados por esse desafio?
+","Durante o desenvolvimento do casos de testes com Selenium vocês foram impactados por esse desafio?
+",Opnião
+1.232,Association-types,cypress,Não,,não,,Não,sim,"Cypress:
+
+O Cypress demonstrou ser uma ótima ferramenta de ser utilizar, tanto para o desenvolvimento, por meio de sua sintaxe simples e fácil configuração, assim como por sua interface amigável e eficaz. Além disso, não tivemos nenhum problema no que diz respeito às chamadas assíncronas dos eventos durante o teste.
+
+Selenium:
+
+O Selenium, por sua vez, se mostrou bem mais complicado para se desenvolver os testes pelos seguintes motivos:
+
+1. Configuração de qualidade duvidosa (Firefox?).
+2. Métodos de estranha compreensão no início.
+3. Problemas em chamadas assíncronas. As suítes funcionavam esporadicamente.
+4. Os reports de erros não apontam diretamente no que gerou o problema."
+2.232,payment-methods,cypress,Não,,não,,Sim,sim,"Hiarly:
+O Cypress pareceu ser uma ferramnenta mais robusta para testes do que o Selenium. A maior dificuldade do Cypress foi aprender a sintaxe. Já o Selenium teve a facilidade de ser em javascript, entretanto ocorreram erros de sincronização, o que difuculta os testes
+
+Marcos:
+O Cypress consegiu agregar de forma mais intuitiva os testes, além de trazer um feedback visual mais agradável em comparação ao Selenium. O Selenium, a primeira vista, é mais verborrágico, em contra partida, ele pode ser um pouco mais expressivo que o Cypress para experientes em JS. "
+3.232,Exchange rates,cypress,Não,,não,,Não,sim,"Para nós, testes de GUI no geral são mais complexos por demandar um esforço em identificar os melhores seletores dos elementos da interface e que sejam mais tolerantes a mudanças na página. Sobre as diferenças entre os frameworks, consideramos o Cypress mais amigável em relação à escrita dos testes e com funcionalidades úteis para detecção de falhas, como a gravação da execução dos testes."
+4.232,customers,cypress,sim,sim,sim,Sim,Não,sim,"Achamos a implementação em cypress mais simples de ser desenvolvida (api mais intuitiva), principalmente em relação a forma de acesso aos elementos HTML.O código da implementação usando selenium ficou mais verborrágico e tivemos mais testes flaky"
+5.232,Taxons,cypress,Não,,não,,Sim,sim,Cypress é mais fácil debugar mas mais verboso.
+6.232,Tax rates,cypress,Não,,não,,Não,sim,"Percebemos que o Cypress oferece uma experiência mais suave e amigável em comparação com o Selenium, pois elimina a necessidade de lidar manualmente com tempos de espera, tornando os testes mais eficientes e menos propensos a problemas de sincronização, enquanto o Selenium parece mais complexo devido à necessidade de lidar com tempos de espera explícitos e configurações adicionais. Além disso, é muito mais simples selecionar elementos pela interface que o Cypress oferece, além dele permitir uma sintaxe muito mais suscinta."
+7.232,Cart promotions,cypress,Não,,não,,Sim,sim,"A legibilidade do Cypress em relação ao Selenium é pior, porém foi mais fácil desenvolver os casos de testes no cypress."
+8.232,Payments,cypress,Não,,sim,Sim,Sim,sim,"Cypress tem uma interface e utilização mais intuitiva. O Selenium apresentou mais desafios na construção de testes, e também é mais difícil de acompanhar o desenrolar dos testes em tempo real. Ambos foram relativamente complicados de utilizar por sua natureza assíncrona e funcionalidades totalmente novas para nós."
+9.232,Products,cypress,Não,,não,,Não,não,"Tivemos uma boa perspectiva com ambas as ferramentas, mesmo elas não sendo muito intuitivas de início, o problema maior foi em relação a executar o Sylius pois estava ocorrendo um erro de permissão que só foi resolvido com ajuda de thiago."
+10.232,Attributes,cypress,Não,,não,,Sim,sim,O Cypress apresentou alguns impactos positivos quanto ao Selenium: A ferramenta de visualização e reprodução dos casos de teste do Cypress foi muito útil para analisar a origem dos erros dos testes e para auxiliar aquisição de seletores válidos para os casos de teste; e Cypress também apresentou menos falhas causadas pelo Desafio de Sincronização. Não houve impactos negativos do Cypress em relação ao Selenium.
+11.232,"  
+ 	
+Orders/Currencies",cypress,Não,,não,,Sim,sim,"Foi interessante. Definitivamente nos aprofundariarmos mais se não estivessimos dando atenção da cadeira toda pra o seminario.
+
+O cypress foi mais facil de instalar e usar, apesar de só funcionar no edge.
+O selenium foi um pouco mais complexo. Porem mais ""maturo"". Tem uma comunidade consideravel"
+12.232,Catalog promotions,cypress,Não,,sim,Sim,Não,sim,"Utilizando o Selenium, foi mais complicado de debbugar erros nos testes e de pesquisar soluções em Javascript para os problemas que estávamos tendo. Com o Cypress, nem precisamos pesquisar soluções porque o histórico de execução do Cypress mostrava tudo o que a gente precisava para encontrar a causa dos erros.
+
+Em geral, a experiência utilizando o Cypress foi bem mais fluida, apesar de o modo de se fazer asserts no Cypress ser um pouco mais complicado do que no Selenium.
+
+Uma dificuldade presente com os dois frameworks foi que, em alguns casos, era difícil encontrar seletores para escolher os elementos que seriam os alvos das interações (inputs, botões, links, etc)."
+13.232,Countries,cypress,Não,,não,,Não,sim,"Foram experiências interessantes. Ainda não havia trabalhado com testes de GUI dessa forma e tive meu primeiro contato direto com os dois frameworks. Achei muito interessante, e foi um conhecimento novo que agregou bastante às minhas habilidades técnicas.
+O Cypress se apresentou como o framework mais fácil e intuitivo, pois registra todos os passos. O código do cypress também era mais legível e fácil de compreender.
+O Selenium foi um desafio para se adaptar após utilizar o Cypress devido as diferenças entre as ferramentas. Outro problema encontrado no Selenium foi em relação a Sincronização, que causou erros em alguns momentos.
+Em resumo, não há muita diferença entre um e outro, apenas detalhes a se ter cuidado na implementação. Não houveram experiências negativas."
+14.232,Association types,cypress,sim,sim,sim,Sim,Sim,sim,"Com a realização do exercício tivemos a percepção que o cypress possui uma maior simplicidade comparado com o Selenium. A capacidade do cypress de visualizar as ações em tempo real ajudou a criar e analisar os testes. Por isso, acreditamos que a curva de aprendizado no cypress seja mais suave. Além disso, o Cypress facilita o acesso aos elementos do sistema, diferente do Selenium que possui uma sintaxe mais complexa."
+15.232,Product reviews,selenium,Não,,não,,Sim,sim,"A sintaxe do Cypress parece ser mais simples de se entender, entretanto alguns problemas surgiram na hora de rodar os testes do Cypress, enquanto a maioria dos testes feitos do Selenium pareceram rodar mais tranquilamente, com algumas ressalvas.
+"
+16.233,Products,cypress,Não,,não,,Sim,sim,"Achamos Cypress mais simples de implementar, além de ser mais legível ao comparar com o Selenium, que possui funções mais complicadas de lidar, sendo necessário realizar mais operações até chegar ao assert."
+17.232,Locales,cypress,sim,sim,não,,Não,não,"Acreditamos que a principal dificuldade foi a falta de costume com as tecnologias, tendo em vista que o exercício foi proposto num período curto."
