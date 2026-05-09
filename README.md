@@ -8,19 +8,20 @@
 
 This repository contains the replication package for an empirical study comparing **Cypress** and **Selenium** as introductory frameworks for GUI test automation in an undergraduate Software Verification and Validation course.
 
-The study spans **five semesters** and involves **98 student pairs**, who developed GUI test suites for a web application using both frameworks under comparable conditions.We integrate static analysis of the generated test artifacts with questionnaire data to examine how the choice of framework affects both the structural quality of tests produced by students and their development experience
+The study spans **five semesters** and involves **98 student pairs**, who developed GUI test suites for a web application using both frameworks under comparable conditions. We integrate static analysis of the generated test artifacts with questionnaire data to examine how the choice of framework affects both the structural quality of tests produced by students and their development experience.
+
 ### Research Questions
 
 - **RQ1:** How do Cypress and Selenium test suites written by undergraduate students compare in terms of quality?
 - **RQ2:** How do students perceive the development experience and challenges of using Cypress and Selenium?
 
 ---
-Repository Structure
+
+## Repository Structure
 
 ```
 .
 ├── README.md
-│
 │
 ├── materials/
 │   ├── activity.pdf             # Assignment given to student pairs
@@ -34,30 +35,30 @@ Repository Structure
 │       ├── eslint.config.js
 │       └── README.md
 │
-├── test-suites/                    # Anonymized test suites per semester
-│   │   ├── S1.zip
-│   │   ├── S2.zip
-│   │   ├── S3.zip
-│   │   ├── S4.zip
-│   │   └── S5.zip
-
+├── test-suites/                 # Anonymized test suites per semester
+│   ├── S1.zip
+│   ├── S2.zip
+│   ├── S3.zip
+│   ├── S4.zip
+│   └── S5.zip
 │
 └── data/
     ├── code-analysis-results.csv     # Static analysis output (conformance, fragility, test smells)
-│   │   ├── S1.cvs
-│   │   ├── S2.cvs
-│   │   ├── S3.cvs
-│   │   ├── S4.cvs
-│   │   └── S5.cvs
-
-    └── questionnaire-responses.csv   # Anonymized questionnaire responses per pair and semester
-│   │   ├── S1.cvs
-│   │   ├── S2.cvs
-│   │   ├── S3.cvs
-│   │   ├── S4.cvs
-│   │   └── S5.cvs
+    │   ├── S1.csv
+    │   ├── S2.csv
+    │   ├── S3.csv
+    │   ├── S4.csv
+    │   └── S5.csv
+    └── questionnaire-responses.csv   # Anonymized questionnaire responses per pair and semester (in Portuguese)
+        ├── S1.csv
+        ├── S2.csv
+        ├── S3.csv
+        ├── S4.csv
+        └── S5.csv
 ```
+
 ---
+
 ## Study Design
 
 | Item | Description |
@@ -70,6 +71,8 @@ Repository Structure
 | Analysis | AST-based static analysis + ESLint + content analysis of open-ended responses |
 
 Each pair developed two test suites — one in Cypress, one in Selenium — targeting a specific Sylius feature. Minimum requirements: ≥ 10 test cases per suite, ≥ 4 GUI interactions per test case, ≥ 1 assertion per test case.
+
+To ensure a consistent execution environment, students received a **starter kit** containing a preconfigured Docker container for the Sylius application, along with one reference test case per framework (Cypress and Selenium) corresponding to their assigned section of the administrative panel. These reference test cases were provided as examples and are included in each pair's submission.
 
 ---
 
@@ -98,7 +101,7 @@ One row per pair per framework. Columns:
 | `semester` | S1–S5 |
 | `pair_id` | Anonymized pair identifier |
 | `framework` | `cypress` or `selenium` |
-| `test_case_count` | Number of test cases (starter kit excluded) |
+| `test_case_count` | Number of test cases (starter kit reference test excluded) |
 | `assertion_conformity` | % of test cases with ≥ 1 assertion |
 | `interaction_conformity` | % of test cases with ≥ 4 interactions |
 | `avg_assertions` | Average assertions per test case |
@@ -120,6 +123,8 @@ One row per pair per framework. Columns:
 
 One row per pair. Columns: `semester`, `pair_id`, `preferred_framework`, `used_capture_replay_cypress`, `corrected_cypress`, `used_capture_replay_selenium`, `corrected_selenium`, `sync_issues_cypress`, `sync_issues_selenium`, `open_response`.
 
+> **Note:** Open-ended responses (`open_response`) are in Portuguese.
+
 ---
 
 ## Ethical Considerations
@@ -131,5 +136,3 @@ Data was collected as part of regular course activities and anonymized prior to 
 ## License
 
 MIT License
----
-
