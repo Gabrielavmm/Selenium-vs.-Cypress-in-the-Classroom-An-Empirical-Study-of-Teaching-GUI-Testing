@@ -31,11 +31,14 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 │
 ├── scripts/
 │   ├── ast-analysis/            # Custom AST-based parser for conformance, fragility, and hard-coded smells
-│   │   ├── ast.py
-│   │   └── README.md
+│     ├── ast.py
+│     └── README.md
 │   └── eslint-config/           # ESLint configuration with Cypress and Mocha plugins for test smell detection
 │       ├── eslint.config.js
 │       └── README.md
+|   └── statistical-analysis/    # Script for statistical analysis
+│       ├── wilcoson.py
+│       
 │
 ├── test-suites/                 # Anonymized test suites per semester
 │   ├── S1.zip
