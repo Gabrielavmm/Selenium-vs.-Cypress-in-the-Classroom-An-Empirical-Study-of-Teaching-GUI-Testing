@@ -25,7 +25,7 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 │
 ├── materials/
 │   ├── activity.pdf             # Assignment given to student pairs
-│   └── questionnaire.md        # Perception questionnaire (closed + open-ended questions)
+│   └── questionnaire.md        # Perception questionnaire (closed + open-ended questions - In portuguese)
 │
 ├── scripts/
 │   ├── ast-analysis/            # Custom AST-based parser for conformance, fragility, and hard-coded smells
@@ -123,7 +123,7 @@ One row per pair per framework. Columns:
 
 One row per pair. Columns: `semester`, `pair_id`, `preferred_framework`, `used_capture_replay_cypress`, `corrected_cypress`, `used_capture_replay_selenium`, `corrected_selenium`, `sync_issues_cypress`, `sync_issues_selenium`, `open_response`.
 
-> **Note:** Open-ended responses (`open_response`) are in Portuguese.
+> **Note:** Open-ended responses are in Portuguese.
 
 ---
 
