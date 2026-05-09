@@ -63,10 +63,7 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 ```
 
 ---
-<<<<<<< HEAD
 
-=======
->>>>>>> 5154717 (feat. questionare)
 ## Study Design
 
 | Item | Description |
@@ -80,28 +77,41 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 
 Each pair developed two test suites — one in Cypress, one in Selenium — targeting a specific Sylius feature. Minimum requirements: ≥ 10 test cases per suite, ≥ 4 GUI interactions per test case, ≥ 1 assertion per test case.
 
-
-To ensure a consistent execution environment, students received a **starter kit** containing a preconfigured Docker container for the Sylius application, along with one reference test case per framework (Cypress and Selenium) corresponding to their assigned section of the administrative panel. These reference test cases were provided as examples and are included in each pair's submission.
-=======
-
+Students received a starter kit with a preconfigured Docker container and one reference test case for each framework (Cypress and Selenium). The examples targeted the assigned administrative-panel section and were included in the submissions.
 
 ---
+
 ## Analysis Pipeline
 
-Two complementary tools were used to extract metrics from the test suites:
+### 1. AST-based analysis (`scripts/ast-analysis/`)
+Parses each test file into an Abstract Syntax Tree to extract:
 
-**1. AST-based analysis** (`scripts/ast-analysis/`)  
-Parses each test file into an Abstract Syntax Tree to extract: `test_case_count`, `assertion_conformity`, `interaction_conformity`, `avg_assertions`, `total_locators`, `fragile_locator_rate`, locator type breakdown (`loc_class`, `css_outro`, `xpath_relativo`), and the `smell_hard_coded` metric.
+- test_case_count  
+- assertion_conformity  
+- interaction_conformity  
+- avg_assertions  
+- total_locators  
+- fragile_locator_rate  
+- locator breakdown  
+- smell_hard_coded  
 
-**2. ESLint** (`scripts/eslint-config/`)  
-Detects the following test smells: `eslint_cy_wait_fixo`, `eslint_unsafe_chain`, `eslint_await_loop`, `eslint_no_only_test`, `eslint_no_unused_var`, `max_lines_per_function`, `max_statements`.
+---
 
-See each script's `README.md` for setup and usage instructions.
+### 2. ESLint (`scripts/eslint-config/`)
+Detects test smells such as:
 
-**3. Statistical analysis** (`scripts/statistical-analysis/`)  
-Applies the Wilcoxon Signed-Rank test to validate differences in
-`fragile_locator_rate` between frameworks, reported with effect
-size r overall and per semester.
+- fixed waits  
+- unsafe chains  
+- await loops  
+- `.only()` usage  
+- unused variables  
+- max lines per function  
+- max statements  
+
+---
+
+### 3. Statistical analysis (`scripts/statistical-analysis/`)
+Applies the Wilcoxon Signed-Rank test to validate differences in `fragile_locator_rate` between frameworks, reporting effect size r overall and per semester.
 
 ---
 
@@ -109,43 +119,49 @@ size r overall and per semester.
 
 ### `data/code-analysis-results.csv`
 
-One row per pair per framework. Columns:
+One row per pair per framework:
 
 | Column | Description |
 |--------|-------------|
-| `semester` | S1–S5 |
-| `pair_id` | Anonymized pair identifier |
-| `framework` | `cypress` or `selenium` |
-<<<<<<< HEAD
-| `test_case_count` | Number of test cases (starter kit reference test excluded) |
-=======
-| `test_case_count` | Number of test cases (starter kit excluded) |
->>>>>>> 5154717 (feat. questionare)
-| `assertion_conformity` | % of test cases with ≥ 1 assertion |
-| `interaction_conformity` | % of test cases with ≥ 4 interactions |
-| `avg_assertions` | Average assertions per test case |
-| `total_locators` | Total locators found in the suite |
-| `fragile_locator_rate` | Line-weighted proportion of fragile locators |
-| `loc_class` | Count of class-based locators |
-| `css_outro` | Count of unclassified CSS locators |
-| `xpath_relativo` | Count of relative XPath locators |
-| `smell_hard_coded` | Hard-coded values smell count |
-| `eslint_cy_wait_fixo` | Fixed-wait smell (ESLint) |
-| `eslint_unsafe_chain` | Unsafe chain smell (ESLint) |
-| `eslint_await_loop` | Await-loop smell (ESLint) |
-| `eslint_no_only_test` | `.only()` smell (ESLint) |
-| `eslint_no_unused_var` | Unused variable smell (ESLint) |
-| `max_lines_per_function` | Max lines per function smell (ESLint) |
-| `max_statements` | Max statements smell (ESLint) |
+| semester | S1–S5 |
+| pair_id | Anonymized pair identifier |
+| framework | cypress / selenium |
+| test_case_count | Number of test cases (starter kit excluded) |
+| assertion_conformity | % of test cases with ≥ 1 assertion |
+| interaction_conformity | % of test cases with ≥ 4 interactions |
+| avg_assertions | Average assertions per test case |
+| total_locators | Total locators found in the suite |
+| fragile_locator_rate | Line-weighted proportion of fragile locators |
+| loc_class | Count of class-based locators |
+| css_outro | Count of unclassified CSS locators |
+| xpath_relativo | Count of relative XPath locators |
+| smell_hard_coded | Hard-coded values smell count |
+| eslint_cy_wait_fixo | Fixed-wait smell (ESLint) |
+| eslint_unsafe_chain | Unsafe chain smell (ESLint) |
+| eslint_await_loop | Await-loop smell (ESLint) |
+| eslint_no_only_test | `.only()` smell (ESLint) |
+| eslint_no_unused_var | Unused variable smell (ESLint) |
+| max_lines_per_function | Max lines per function smell (ESLint) |
+| max_statements | Max statements smell (ESLint) |
+
+---
 
 ### `data/questionnaire-responses.csv`
 
-One row per pair. Columns: `semester`, `pair_id`, `preferred_framework`, `used_capture_replay_cypress`, `corrected_cypress`, `used_capture_replay_selenium`, `corrected_selenium`, `sync_issues_cypress`, `sync_issues_selenium`, `open_response`.
-<<<<<<< HEAD
+One row per pair:
+
+- semester  
+- pair_id  
+- preferred_framework  
+- used_capture_replay_cypress  
+- corrected_cypress  
+- used_capture_replay_selenium  
+- corrected_selenium  
+- sync_issues_cypress  
+- sync_issues_selenium  
+- open_response  
 
 > **Note:** Open-ended responses are in Portuguese.
-=======
->>>>>>> 5154717 (feat. questionare)
 
 ---
 
@@ -157,8 +173,6 @@ Data was collected as part of regular course activities and anonymized prior to 
 
 ## License
 
-<<<<<<< HEAD
 MIT License
-=======
-MIT License
+
 >>>>>>> 5154717 (feat. questionare)
