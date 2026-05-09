@@ -24,8 +24,10 @@ The study spans **five semesters** and involves **98 student pairs**, who develo
 ├── README.md
 │
 ├── materials/
-│   ├── activity.pdf             # Assignment given to student pairs
+│   ├── activity.pdf            # Assignment given to student pairs
 │   └── questionnaire.md        # Perception questionnaire (closed + open-ended questions - In portuguese)
+|   └── startet-kit             # Starter kit provided
+
 │
 ├── scripts/
 │   ├── ast-analysis/            # Custom AST-based parser for conformance, fragility, and hard-coded smells
