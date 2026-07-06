@@ -5,10 +5,11 @@
 
 ## Overview
 
-This repository contains the replication package for an empirical study comparing **Cypress** and **Selenium** as introductory frameworks for GUI test automation in an undergraduate Software Verification and Validation course.
+This repository provides the replication package for an empirical study conducted in the context of an undergraduate Software Verification and Validation course. The study investigates the use of Cypress and Selenium as introductory frameworks for teaching and practicing GUI test automation.
 
-The study spans **five semesters** and involves **98 student pairs**, who developed GUI test suites for a web application using both frameworks under comparable conditions. We integrate static analysis of the generated test artifacts with questionnaire data to examine how the choice of framework affects both the structural quality of tests produced by students and their development experience.
+Over five academic semesters, 98 pairs of students developed GUI test suites for the same web application using both frameworks under comparable instructional and experimental conditions. The replication package includes the materials and data used to analyze the test artifacts produced by the students, as well as questionnaire responses collected to understand their perceptions during the development process.
 
+The study combines static analysis of student-generated test suites with self-reported experience data to examine how each framework supports novice testers in producing GUI tests and how students perceive the learning process, usability, and challenges associated with Cypress and Selenium. Rather than focusing only on tool performance, the study aims to understand the educational implications of adopting these frameworks in software testing courses.
 ### Research Questions
 
 - **RQ1:** How do Cypress and Selenium test suites written by undergraduate students compare in terms of quality?
