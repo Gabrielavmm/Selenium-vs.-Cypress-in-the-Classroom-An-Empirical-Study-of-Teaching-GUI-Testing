@@ -1,4 +1,4 @@
-# Selenium vs. Cypress in the Classroom: An Empirical Study of Teaching GUI Testing
+# Selenium vs. Cypress in the Classroom: A Multi-Semester Case Study on GUI Test Quality and Student Experience
 
 
 ---
