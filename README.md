@@ -1,16 +1,17 @@
-# Selenium vs. Cypress in the Classroom: A Multi-Semester Case Study on GUI Test Quality and Student Experience
+# Selenium vs. Cypress in the Classroom: An Empirical Study of Teaching GUI Testing
 
 
 ---
 
 ## Overview
-This repository provides the replication package for a multi-semester classroom case study comparing Cypress and Selenium as introductory frameworks for GUI test automation in an undergraduate software quality course.
+This repository contains the replication package for a longitudinal classroom study conducted over multiple semesters to compare Cypress and Selenium as introductory frameworks for GUI test automation in an undergraduate software quality course.
 
-The study investigates how the choice of testing framework influences both the structural quality of student-produced test artifacts and the development experience perceived by novice testers. Across five semesters, 98 student pairs developed GUI test suites for the same web application using both frameworks under comparable instructional conditions.
+The study explores how the selected testing framework affects both the quality of the GUI test suites produced by students and the learning experience of novice testers. Throughout five academic semesters, 98 student pairs implemented automated GUI tests for the same web application using both frameworks under equivalent instructional settings.
 
-The replication package includes the materials, data, and analysis scripts used to examine the resulting test suites through a static analysis pipeline focused on conformance, locator fragility, and test smells. It also includes questionnaire data collected to understand students’ perceptions of usability, challenges, debugging support, synchronization, and overall development experience.
+The replication package provides the datasets, experimental materials, and analysis scripts used to assess the generated test suites through a static analysis pipeline that evaluates test conformance, locator robustness, and the presence of test smells. It also includes questionnaire responses collected to capture students' perceptions regarding usability, debugging, synchronization mechanisms, development challenges, and overall learning experience.
 
-By combining artifact-based analysis with students’ self-reported perceptions, the study provides empirical evidence on the trade-offs between Cypress and Selenium and supports more informed decisions about framework selection in introductory software testing and software quality courses.
+By integrating quantitative analyses of the test artifacts with qualitative feedback from students, the study offers empirical insights into the strengths and limitations of Cypress and Selenium, helping educators and researchers make more informed decisions when selecting GUI testing frameworks for introductory software testing and software quality courses.
+
 ### Research Questions
 
 - **RQ1:** How do Cypress and Selenium test suites written by undergraduate students compare in terms of quality?
